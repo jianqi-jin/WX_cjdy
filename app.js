@@ -38,7 +38,7 @@ App({
     "name": "1" ,
     classTitle: ['校园动态'],
     //serverUri: 'https://127.0.0.1:3001/',
-    serverUri: 'https://39.106.49.94:3001/',
+    serverUri: 'https://39.106.49.94:3001/',//39.106.49.94
     errCode: {
       22: 'session验证失效，需跳转user.page',
       34: '教务网cookie失效，需要重新登录'

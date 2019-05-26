@@ -9,6 +9,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"nodeModules": true,
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
@@ -73,7 +74,14 @@
 					"pathName": "pages/bind/bind",
 					"query": "",
 					"scene": null
-				}
+				},
+        {
+          "id": -1,
+          "name": "search",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        }
 			]
 		}
 	}
