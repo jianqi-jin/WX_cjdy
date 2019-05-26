@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<swiper
+  interval='5000'
+  autoplay='true'
+  duration='1000'
+  indicator-dots='true'
+  circular='true'
+>
+
+  <view wx:for="{{banner}}" wx:key="index">
+    <swiper-item> 
+      <image wx:if="{{item.imgUrl}}" src="{{item.imgUrl}}"></image>
+    </swiper-item>
+  </view>
+</swiper>
+
+<wxs module="color" src="../../utils/color.wxs"></wxs>
+
+
+
+<scroll-view scroll-x class='navBox'>
+  <view class='navBtn' style='background:{{color.getColor(index)}}' wx:for="{{9}}" wx:key="index">{{index}}</view>
+</scroll-view>
+
+
+<view class='cardBox' wx:for="{{card}}" wx:key="index">
+  <view class='classTitle'>{{item.classTitle}}</view>
+  <view class='classMore'>更多</view>
+  <view class='cardItem' wx:for="{{item.cardData}}" wx:key="index">
+    <image class='cardImg' src="{{item.imgUrl}}"></image>
+    <view class='cardTitle'>{{item.title}}</view>
+    <view class='cardInfo'>{{item.info}}</view>
+  </view>
+</view>

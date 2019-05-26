@@ -1,0 +1,20 @@
+
+var colorDef = ['#7ecef4', '#f8b551', '#b3d465', '#00b7ee'];
+
+var classTable = {
+  findClassTime : function (index, arr) {
+    return arr.indexOf(index)
+  }
+}
+
+var color = {
+  getColor: function() {
+    var index = Math.floor(Math.random() * 4);
+    return colorDef[index];
+  }
+}
+
+module.exports = {
+  findClassTime: classTable.findClassTime,
+  getColor: color.getColor
+}

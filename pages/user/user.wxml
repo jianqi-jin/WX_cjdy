@@ -1,0 +1,31 @@
+<!--pages/user/user.wxml-->
+<view class='userBackImg'>
+  <image src='./res/imgs/userBack.png'></image>
+</view>
+<view wx:if='{{!userInfoFlag}}' class='loginBtn'>
+  <button bindgetuserinfo='bindUserInfo' type='primary' open-type='getUserInfo'>
+    授权登录
+  </button>
+</view>
+
+<view wx:else class='userBox'>
+  <view class='userInfo'>
+    <view class='userHeadBox'>
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='userInfoBox'>
+      <view class='nickName'>昵称：{{userInfo.nickName}}</view>
+      <view class='studentId'>学号：{{stuData.user}}</view>
+    </view>
+  </view>
+  <navigator  wx:for='{{4}}' wx:key='index' hover-class='navigator-hover'
+    url='{{btnList[index].page}}'
+  >
+    <view class='listBox'>
+      <view class='icon'></view>
+      <view class='title'>{{btnList[index].title}}</view>
+      <view class='arr'><image  src='./res/imgs/arr.png'></image></view>
+      
+    </view>
+  </navigator>
+</view>

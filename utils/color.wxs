@@ -1,0 +1,11 @@
+
+var color = {
+  getColor: function(value){
+    var color = ['#7ecef4', '#f8b551', '#b3d465', '#00b7ee']
+    return color[value]
+    }
+}
+
+module.exports = {
+  getColor: color.getColor
+}

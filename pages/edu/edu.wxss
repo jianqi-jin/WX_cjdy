@@ -1,0 +1,153 @@
+/* pages/edu/edu.wxss */
+.header{
+  background: #fbf9fe;
+  text-align: center;
+  height: 180rpx;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.headerBox{
+  
+  color: var(--g-titleColor);
+  background: #fbf9fe;
+  padding: 16rpx 20rpx 14rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.headerInfo{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tableInfo{
+  width: 30%;
+  position: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headerMajorBtn{
+  
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  height: 28rpx;
+  overflow: hidden;
+}
+
+.headerYearBtn{
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 24rpx;
+  overflow: hidden;
+  font-size: 20rpx;
+}
+.headerWeekBtn{
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  
+}
+.headerSetBtn{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 30%;
+  margin-right: 10rpx;
+}
+
+.tableHeader{
+  color: var(--g-infoColor);
+  display: flex;
+  flex-direction: row;  
+  height: 60rpx;
+  
+}
+.tableHeaderItem{
+  width: 10%;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 26rpx;
+  flex-grow: 2;
+  font-weight: lighter;
+}
+.tableHeaderItem:first-child{
+  width: 50rpx;
+  font-size: 22rpx;
+}
+
+.tableBox{
+  margin-top: 180rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+}
+.tableLine{
+
+  width: 10%;
+  flex-grow: 2;
+}
+
+.classBox{
+  height: 226rpx;
+  margin: 2rpx 0 2rpx 0;
+  box-shadow: 0px 0px 5px var(--tempColor);
+}
+.classBoxOut{
+  height: 230rpx;
+  margin: 6rpx;
+}
+.classBoxEmpty{
+  height: 230rpx;
+  margin: 4rpx;
+  visibility: hidden;
+}
+.classBoxClassName{
+  max-height: 160rpx;
+  min-height: 130rpx;
+  overflow: hidden;
+}
+.classTitleLine .classBox{
+  font-size: 20rpx;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.classTitleLine .classBox view{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10rpx;
+}
+
+.classLine .classBox{
+  border-radius: 14rpx;
+  font-size: 26rpx;
+  padding-left: 6rpx;
+  color: #fff;
+}
+.tableLine:first-child{
+  width: 14rpx;
+}
+.classLine .noClass{
+  background: var(--g-backgroundColorH);
+  color: var(--g-infoColor);
+}
+.nowDay{
+  background: #dfdfdf;
+  color: #fff;
+  font-weight: normal;
+  border-radius: 14rpx;
+}

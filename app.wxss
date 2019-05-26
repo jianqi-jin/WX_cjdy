@@ -1,0 +1,24 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+page{
+  background: #fbf9fe;
+  height: 100%;
+  --g-firstColor: #008aa8;
+  --g-titleColor: #363636;
+  --g-textColor: #606060;
+  --g-infoColor: #808080;
+  --g-backgroundColorL: #fbf9fe;
+  --g-backgroundColorH: #efefee;
+  --g-lighterColor: #0dbce5;
+  --g-green: #00df0c;
+  --g-red: #df0000;
+}

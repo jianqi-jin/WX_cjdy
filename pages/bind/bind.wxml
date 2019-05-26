@@ -1,0 +1,28 @@
+<!--pages/bind/bind.wxml-->
+<view class="ad_popError"
+animation='{{animationData}}'
+ wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+<view class='backgroundBox'></view>
+<view class='userInfoBox'>
+  <view class='userImg'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+  </view>
+  <view class='nickName'>{{userInfo.nickName}}</view>
+</view>
+<form bindsubmit='formSubmit'>
+<view class='inputBox'>
+  <view wx:for='{{3}}' wx:key='index' class='inputLine'>
+    <input name='{{input.name[index]}}' password='{{index == 1 ? true : false}}' placeholder='{{input.title[index]}}' value='{{input.value[index]}}'></input>
+  </view>
+  
+</view>
+
+<view class='vCode'>
+  <image bindtap='loadVcode' src='data:image/png;base64,{{vCodeBase64}}'></image>
+</view>
+<button form-type='submit' class='btn_bind' type='primary'>绑定</button>
+
+</form>
+
+
+<button bindtap='getClassTableList'>获取课程表</button>

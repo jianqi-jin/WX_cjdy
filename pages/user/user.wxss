@@ -1,0 +1,97 @@
+/* pages/user/user.wxss */
+.userBackImg{
+  width: 100%;
+  position: absolute;
+  top: 0rpx;
+  z-index: -1;
+  background: #fff;
+}
+.userBackImg image{
+  width: 100%;
+}
+.userBox{
+  width: 100%;
+  margin-top: 290rpx;
+
+}
+.userInfo{
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+  padding-left: 20rpx;
+}
+.userHeadBox{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+
+}
+.userHeadBox image{
+  width: 100%;
+  height: 100%;
+}
+
+.userInfoBox{
+  display: flex;
+  flex-direction: column;
+  margin-left: 60rpx;
+}
+.userInfoBox view{
+
+  
+  height: 50rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.nickName{
+  color: var(--g-titleColor);
+  font-size: 36rpx;
+}
+.studentId{
+  color: var(--g-infoColor);
+  font-size: 24rpx;
+}
+
+.listBox{
+  height: 130rpx;
+  margin-top: 4rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  align-items: center;
+  width: 100%;
+}
+.icon{
+  width: 150rpx;
+  height: 100%;
+  
+}
+.title{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.arr{
+  margin-left: 0rpx;
+}
+
+.arr image{
+  width: 20rpx;
+  height: 20rpx;
+  position: absolute;
+  right: 20rpx;
+}
+
+.loginBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.loginBtn button{
+  width: 95%;
+}
