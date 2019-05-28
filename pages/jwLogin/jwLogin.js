@@ -78,7 +78,7 @@ Page({
       title: type ? '账号绑定' : '教务登录',
     })
     let action = query.action == 0 || query.action == null ? false : true;
-    let nextUrl = query.nextUrl;
+    let nextUrl = query.nextUrl == undefined ? '' : query.nextUrl;
     this.setData({
       bindType: type,
       action,
@@ -101,9 +101,16 @@ Page({
               title: res.msg,
             })
             setTimeout(function () {
-              wx.navigateTo({
-                url: that.data.nextUrl,
-              })
+
+              if (that.data.nextUrl) {
+                wx.navigateTo({
+                  url: that.data.nextUrl,
+                })
+              } else {
+                wx.navigateBack({
+                  delta: 1
+                })
+              }
             }, 1000)
           })
         }else{
@@ -111,12 +118,14 @@ Page({
             title: res.msg,
           })
           setTimeout(function () {
+            
             if (that.data.nextUrl) {
               wx.navigateTo({
                 url: that.data.nextUrl,
               })
             } else {
               wx.navigateBack({
+                delta: 1
               })
             }
           }, 1000)

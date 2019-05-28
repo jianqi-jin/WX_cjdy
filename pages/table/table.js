@@ -80,7 +80,9 @@ Page({
         endTime: '9:35'
       }
     ],
-    classTableList: []
+    classTableList: [
+      {}, {}, {}, {}, {}, {}, {},
+    ]
   },
   onShow(){
     let that = this;
