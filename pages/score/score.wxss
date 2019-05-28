@@ -1,0 +1,43 @@
+/* pages/score/score.wxss */
+.scoreView{
+  margin-top: 40px;
+}
+
+.scoreTitle{
+  height: 50px;
+  border-radius: 3px;
+  box-shadow: #999 0px 0px 5px;
+  margin: 10px 10px 0px 10px;
+}
+.scoreBox{
+  position: relative;
+}
+.scoreName{
+  line-height: 50px;
+  margin-left: 10px;
+  font-size: 18px;
+  color: var(--g-titleColor);
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scoreScore{
+  position: absolute;
+  right: 100px;
+  height: 50px;
+  line-height: 50px;
+}
+.scoreContent{
+  background: #f4f4f4;
+  font-size: 28rpx;
+  color: var(--g-titleColor);
+  padding: 10px 20px 10px 20px;
+  margin: 0px 10px 10px 10px;
+  z-index: -1;
+  position: relative;
+}
+.scoreContent view{
+  margin-bottom: 10px;
+  font-weight: normal;
+}

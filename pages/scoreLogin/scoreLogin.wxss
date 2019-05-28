@@ -1,0 +1,61 @@
+/* pages/bind/bind.wxss */
+.userInfoBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 250rpx;
+}
+.userImg{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userImg image{
+  width: 100%;
+  height: 100%;
+}
+.nickName{
+  font-size: 36rpx;
+  margin-top: 30rpx;
+}
+.inputLine{
+  background: #fff;
+  height: 80rpx;
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+input{
+  margin-left: 20rpx;
+}
+.vCode{
+  margin: 50rpx auto 0rpx auto;
+  width: 300rpx;
+  height: 100rpx;
+  background: #dedede;
+  border-radius: 4rpx;
+}
+.vCode image{
+  width: 100%;
+  height: 100%;
+}
+
+
+.btn_bind{
+  margin: 100rpx 20rpx 0 20rpx;
+}
+
+
+.ad_popError{ 
+  background: #de352d; 
+  color: #fff; 
+  height: 58rpx; 
+  line-height: 58rpx; 
+  font-size: 24rpx; 
+  text-align: center; 
+  position: fixed; left: 0; top: -59rpx; width: 100%; 
+  z-index:3;
+  transition: all 1s;
+}

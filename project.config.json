@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -48,16 +48,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "index",
-					"pathName": "pages/logs/logs",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "edu",
-					"pathName": "pages/edu/edu",
+					"id": 1,
+					"name": "score",
+					"pathName": "pages/score/score",
 					"query": "",
 					"scene": null
 				},
@@ -69,19 +62,54 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "bind",
 					"pathName": "pages/bind/bind",
 					"query": "",
 					"scene": null
 				},
-        {
-          "id": -1,
-          "name": "search",
-          "pathName": "pages/search/search",
-          "query": "",
-          "scene": null
-        }
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bind",
+					"pathName": "pages/jwTools/jwTools",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "table",
+					"pathName": "pages/table/table",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "jwTools",
+					"pathName": "pages/jwTools/jwTools",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "jwLogin",
+					"pathName": "pages/jwLogin/jwLogin",
+					"query": "type=1",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				}
 			]
 		}
 	}

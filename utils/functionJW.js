@@ -27,7 +27,10 @@ const user = {
     })
     
   },
-  login_JW: (obj) => {
+  login_JW: (obj, bind) => {
+    if (bind != false){
+      bind = true;
+    }
     let that = this;
     return new Promise(resolve => {
       var user = obj.user;
@@ -68,7 +71,8 @@ const user = {
         data: {
           user,
           psw,
-          vCode
+          vCode,
+          bind
         },
         url: app.globalData.serverUri + 'bindUser',
         success(res) {
@@ -105,10 +109,79 @@ const user = {
       })
     })
     
+  },
+  getOptions: () => {
+    let that = this;
+    return new Promise(resolve => {
+      wx.request({
+        url: app.globalData.serverUri + 'getOptions',
+        data: '',
+        header: {
+          'cookie': wx.getStorageSync('sid') + ';' + wx.getStorageSync('jsessionid'),
+          'content-type': 'application/json'
+        },
+        method: 'GET',
+        dataType: 'json',
+        responseType: 'text',
+        success: function (res) {
+          try{
+            resolve(res.data)
+          }catch(e){
+            resolve({
+              err: 1,
+              msg: '解析出错'
+            })
+          }
+        },
+        fail: function (res) {
+          resolve({
+            err: 1,
+            msg: '网络出现问题'
+          })
+         },
+      })
+    })
+    
+  },
+  getScore: (option) => {
+    let that = this;
+    return new Promise(resolve => {
+      wx.request({
+        url: app.globalData.serverUri + 'getScore?option=' + option,
+        data: '',
+        header: {
+          'cookie': wx.getStorageSync('sid') + ';' + wx.getStorageSync('jsessionid'),
+          'content-type': 'application/json'
+        },
+        method: 'GET',
+        dataType: 'json',
+        responseType: 'text',
+        success: function(res) {
+          try {
+            resolve(res.data);
+          }catch(e){
+            console.log(e)
+            resolve({
+              error: 1,
+              msg: '解析失败'
+            })
+          }
+        },
+        fail: function(res) {
+          resolve({
+            err: 1,
+            msg: '网络错误'
+          })
+        },
+        complete: function(res) {},
+      })
+    })
   }
 }
 
 module.exports = {
   loadVcode: user.loadVcode,
-  loginJW: user.login_JW
+  loginJW: user.login_JW,
+  getOptions: user.getOptions,
+  getScore: user.getScore
 }

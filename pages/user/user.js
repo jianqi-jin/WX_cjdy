@@ -44,6 +44,9 @@ Page({
       });
     }
   },
+  onPullDownRefresh(){
+    this.onLoad()
+  },
   _tryToGetUserInfo() {
     var that = this;
     return new Promise((resolve, reject) => {

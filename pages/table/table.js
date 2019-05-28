@@ -4,6 +4,7 @@ const util = require('../../utils/util.js')
 
 Page({
   data:{
+    showSetBox: false,
     years:[
       '2018-2019第一学年',
       '2018-2019第二学年',
@@ -81,12 +82,23 @@ Page({
     ],
     classTableList: []
   },
-  onLoad(){
+  onShow(){
     let that = this;
     util.getStuInfo().then(res => {
       that.setData({
         classTableList: JSON.parse(res.stuData.table)
       })
+    })
+  },
+  toggleSetBox(){
+    let that = this;
+    this.setData({
+      showSetBox: ~that.data.showSetBox 
+    })
+  },
+  hiddenSet(){
+    this.setData({
+      showSetBox: false
     })
   },
   login: () => {

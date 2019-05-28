@@ -22,3 +22,11 @@ page{
   --g-green: #00df0c;
   --g-red: #df0000;
 }
+
+.picker{
+  box-shadow: #ccc 1px 1px 10px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 1px;
+  color: var(--g-titleColor);
+}

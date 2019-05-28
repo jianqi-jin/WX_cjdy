@@ -1,13 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/edu/edu",
+    "pages/table/table",
     "pages/ground/ground",
     "pages/logs/logs",
     "pages/user/user",
     "pages/test/test",
+    "pages/jwLogin/jwLogin",
     "pages/bind/bind",
-    "pages/search/search"
+    "pages/jwTools/jwTools",
+    "pages/score/score"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,13 +30,13 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/edu/edu",
+        "pagePath": "pages/table/table",
         "iconPath": "res/icon/table.png",
         "selectedIconPath": "res/icon/table_active.png",
         "text": "课表"
       },
       {
-        "pagePath": "pages/search/search",
+        "pagePath": "pages/jwTools/jwTools",
         "iconPath": "res/icon/search.png",
         "selectedIconPath": "res/icon/search_active.png",
         "text": "教务"

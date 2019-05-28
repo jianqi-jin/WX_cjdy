@@ -13,7 +13,14 @@ const userInfo = {
           } else {
             wx.getUserInfo({
               success(res) {
-                resolve(res);
+                try {
+                  resolve(res);
+                }catch(e){
+                  resolve({
+                    err: 1,
+                    msg: '解析错误'
+                  });
+                }
               }
             })
           }
@@ -61,6 +68,7 @@ const user = {
     });
   },
   getStuInfo: () => {
+    let that = this;
     return new Promise(resolve => {
       user.verLogin().then(res => {
         wx.request({
@@ -69,7 +77,7 @@ const user = {
             cookie: wx.getStorageSync('sid')
           },
           success: (res) => {
-            console.log(res)
+            app.globalData.jwInfo.user = res.user;
             resolve(res.data)
           }
         })
@@ -91,7 +99,7 @@ function _userLoginByCode(code){
         code: code
       },
       success(res) {
-        wx.setStorageSync('sid', res.header['Set-Cookie']);
+        wx.setStorageSync('sid', res.cookies[0].name + "=" + res.cookies[0].value);
         wx.hideLoading();
         console.log(res)
         resolve(res)

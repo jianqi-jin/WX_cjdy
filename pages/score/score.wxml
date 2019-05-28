@@ -1,0 +1,21 @@
+<!--pages/score/score.wxml-->
+
+<picker mode="selector" value="{{optionIndex}}" bindchange="pickChange" range="{{options}}">
+  <view class='picker'>{{options[optionIndex]}}</view>
+</picker>
+
+<view class='scoreView'>
+  <view class='scoreBox' bindtap='toggleScoreBox' data-index="{{index}}" wx:for="{{scoreList}}" wx:index="{{index}}" wx:key="{{index}}">
+    <view class='scoreTitle'>
+      <view class='scoreScore' style='color:{{item.color}}'>{{item.score}}</view>
+      <view class='scoreName'>{{item.className}}</view>
+    </view>
+    <view class='scoreContent' style='display: {{item.showFlag ? "block" : "none"}}'>
+      <view class='scoreItem'>总成绩:{{item.score}}</view>
+      <view class='scoreItem'>学分:{{item.classScore}}</view>
+      <view class='scoreItem'>课程性质:{{item.classCharacter}}</view>
+      <view class='scoreItem'>考试性质:{{item.examCharacter}}</view>
+      <view class='scoreItem'>课程时间:{{item.openTime}}</view>
+    </view>
+  </view>
+</view>

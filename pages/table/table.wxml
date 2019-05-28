@@ -15,7 +15,13 @@
         <view>{{years[currentYear]}}</view>
       </picker>
     </view>
-    <view class='headerSetBtn'>设置</view>
+    <view class='headerSetBtn' bindtap='toggleSetBox'>设置</view>
+    <view class='{{showSetBox ? "setBoxActive" : "setBox"}} setBoxBack'>
+      <view class='setBoxBack' bindtap='hiddenSet'></view>
+      <view class='setBoxMain'>
+        <navigator hover-class='navigator-hover' url='/pages/jwLogin/jwLogin?type=1&action=1' class='btList'>重新导入课程表</navigator>
+      </view>
+    </view>
   </view>
   <view class='tableHeader'>
     <view class='tableHeaderItem {{index == currentDay - 1 ? "nowDay" : ""}}' wx:for="{{8}}" wx:key='index'>{{index == 0 ? '3月' : days[index - 1]}}</view>

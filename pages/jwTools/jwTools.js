@@ -1,11 +1,32 @@
-// pages/search/search.js
+// pages/jwTools/jwTools.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    btnList: [
+      {
+        title: '成绩查询',
+        page: '/pages/jwLogin/jwLogin?type=0&action=0&nextUrl=' + encodeURI('/pages/score/score')
+      },
+      {
+        title: '4、6级查询',
+        page: '/pages/bind/bind'
+      },
+      {
+        title: '专业要求查询',
+        page: '/pages/bind/bind'
+      },
+      {
+        title: '大物实验查询',
+        page: '/pages/bind/bind'
+      },
+      {
+        title: '课程表查询',
+        page: '/pages/bind/bind'
+      }
+    ]
   },
 
   /**

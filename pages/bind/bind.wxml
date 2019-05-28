@@ -1,28 +1,14 @@
 <!--pages/bind/bind.wxml-->
-<view class="ad_popError"
-animation='{{animationData}}'
- wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
-<view class='backgroundBox'></view>
-<view class='userInfoBox'>
-  <view class='userImg'>
-    <image src='{{userInfo.avatarUrl}}'></image>
-  </view>
-  <view class='nickName'>{{userInfo.nickName}}</view>
-</view>
-<form bindsubmit='formSubmit'>
-<view class='inputBox'>
-  <view wx:for='{{3}}' wx:key='index' class='inputLine'>
-    <input name='{{input.name[index]}}' password='{{index == 1 ? true : false}}' placeholder='{{input.title[index]}}' value='{{input.value[index]}}'></input>
-  </view>
-  
+
+
+
+<view>
+  <view class='btnItem'>{{userInfo.user}}</view> 
+  <navigator class='btnItem' hover-class='navigator-hover' url='/pages/jwLogin/jwLogin?type=1&action=1'>{{userInfo.user == null ? '绑定学号' : '更换绑定'}}</navigator>
+  <!--
+  <view class='btnItem' bindtap='getClassTable'>导入课表</view>
+  -->
+  <view class='btnItem redFont'>解除绑定</view>
 </view>
 
-<view class='vCode'>
-  <image bindtap='loadVcode' src='data:image/png;base64,{{vCodeBase64}}'></image>
-</view>
-<button form-type='submit' class='btn_bind' type='primary'>绑定</button>
-
-</form>
-
-
-<button bindtap='getClassTableList'>获取课程表</button>
+<view class='infoText'>欢迎使用教务查询小工具，如果有更好的建议或意见欢迎提出哟~</view>

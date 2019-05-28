@@ -1,0 +1,6 @@
+<!--pages/jwTools/jwTools.wxml-->
+<view>
+  <navigator class='btnItem' wx:for="{{btnList}}" wx:for-index="idx" wx:for-item="item"  open-type='navigateTo' url='{{item.page}}'>{{item.title}}</navigator>
+</view>
+
+<view class='infoText'>欢迎使用教务查询小工具，如果有更好的建议或意见欢迎提出哟~</view>
