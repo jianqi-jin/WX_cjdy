@@ -87,6 +87,58 @@ const user = {
   }
 }
 
+function getNowWeekBeginStamp() {
+  let nowDate = new Date();
+  let Year = nowDate.getYear() + 1900;
+  let Month = nowDate.getMonth() + 1;
+  let date = nowDate.getDate();
+  let dateStr = Year + '-' + Month + '-' + date
+  console.log(dateStr)
+  let stamp = (new Date(dateStr)).getTime();
+  let weekDay = (new Date(dateStr)).getDay();
+  stamp = stamp - (weekDay - 1) * 24 * 60 * 60 * 1000;
+  return stamp;
+}
+function getStartTime() {
+  return new Promise(resolve => {
+    wx.request({
+      url: app.globalData.serverUri +'getStartTime',
+      data: '',
+      header: {},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res)
+        try {
+          let timeStamp = res.data.res.startTime;
+          let startDate = new Date(parseInt(timeStamp)).toLocaleString();
+          let stamp = getNowWeekBeginStamp();
+          let nowDay = (new Date()).getDay() ;//星期几
+          let nowWeekNum = (stamp - timeStamp) / (24 * 60 * 60 * 1000 * 7) + 1
+          resolve({
+            err: 0, 
+            startDate,
+            nowWeekNum,
+            timeStamp,
+            nowDay,
+            msg: '获取成功'
+          })
+        } catch (e) {
+          console.log(e)
+          resolve({
+            err: 1,
+            msg: '获取失败'
+          })
+        }
+      }
+    })
+    
+    
+  })
+  
+}
+
 function _userLoginByCode(code){
   return new Promise(resolve => {
     wx.showLoading({
@@ -99,7 +151,13 @@ function _userLoginByCode(code){
         code: code
       },
       success(res) {
-        wx.setStorageSync('sid', res.cookies[0].name + "=" + res.cookies[0].value);
+        let cookie = '';
+        if (!res.cookies[0].name){
+          cookie = res.cookies[0]
+        }else{
+          cookie = res.cookies[0].name + "=" + res.cookies[0].value
+        }
+        wx.setStorageSync('sid', cookie);
         wx.hideLoading();
         console.log(res)
         resolve(res)
@@ -112,5 +170,6 @@ module.exports = {
   tryToGetUserInfo: userInfo.tryToGetUserInfo,
   getClassTableList: user.getClassTableList,
   verLogin: user.verLogin,
-  getStuInfo: user.getStuInfo
+  getStuInfo: user.getStuInfo,
+  getStartTime
 }

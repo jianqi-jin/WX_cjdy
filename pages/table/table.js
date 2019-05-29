@@ -91,6 +91,16 @@ Page({
         classTableList: JSON.parse(res.stuData.table)
       })
     })
+
+
+    util.getStartTime().then(res => {
+      console.log(res)
+      that.setData({
+        currentWeek: res.nowWeekNum,
+        currentDay: res.nowDay
+      })
+    })
+    
   },
   toggleSetBox(){
     let that = this;
@@ -109,6 +119,8 @@ Page({
         console.log(res)
       }
     })
+  },
+  onLoad(){
   },
   weekChange(e){
     var index = Math.floor(e.detail.value) + 1;

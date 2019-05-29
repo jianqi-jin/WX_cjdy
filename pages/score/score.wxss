@@ -15,16 +15,16 @@
 .scoreName{
   line-height: 50px;
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 34rpx;
   color: var(--g-titleColor);
-  max-width: 250px;
+  max-width: 180px;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .scoreScore{
   position: absolute;
-  right: 100px;
+  right: 50px;
   height: 50px;
   line-height: 50px;
 }

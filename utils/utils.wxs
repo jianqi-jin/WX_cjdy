@@ -3,7 +3,12 @@ var colorDef = ['#7ecef4', '#f8b551', '#b3d465', '#00b7ee'];
 
 var classTable = {
   findClassTime : function (index, arr) {
-    return arr.indexOf(index)
+    if(!index || !arr){
+      return -1
+    }else{
+      return arr.indexOf(index)
+    }
+      
   }
 }
 
