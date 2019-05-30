@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -110,6 +110,20 @@
 					"name": "index",
 					"pathName": "pages/index/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "score",
+					"pathName": "pages/pageList/pageList",
+					"query": "type=exam",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "score",
+					"pathName": "pages/about/about",
+					"query": "type=abort",
 					"scene": null
 				}
 			]

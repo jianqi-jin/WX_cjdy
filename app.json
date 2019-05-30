@@ -9,7 +9,9 @@
     "pages/jwLogin/jwLogin",
     "pages/bind/bind",
     "pages/jwTools/jwTools",
-    "pages/score/score"
+    "pages/score/score",
+    "pages/pageList/pageList",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",

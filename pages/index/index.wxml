@@ -19,16 +19,22 @@
 
 
 <scroll-view scroll-x class='navBox'>
-  <view class='navBtn' style='background:{{color.getColor(index)}}' wx:for="{{9}}" wx:key="index">{{index}}</view>
+<navigator url='{{item.page}}' class='navItem' wx:for="{{btnList}}" wx:key="index">
+  <view class='navBtn' style='background:{{color.getColor(index)}}'>
+    <view>{{item.name}}</view>
+  </view>
+  <view class='navTitle'>{{item.title}}</view>
+</navigator>
+  
 </scroll-view>
 
 
 <view class='cardBox' wx:for="{{card}}" wx:key="index">
   <view class='classTitle'>{{item.classTitle}}</view>
-  <view class='classMore'>更多</view>
+  <navigator url="{{'/pages/pageList/pageList?type='+item.type}}" class='classMore'>更多</navigator>
   <view class='cardItem' wx:for="{{item.cardData}}" wx:key="index">
-    <image class='cardImg' src="{{item.imgUrl}}"></image>
+    <image class='cardImg' src="{{item.imgList[1].length > 1 ? item.imgList[1] : '/res/imgs/102394.jpg'}}"></image>
     <view class='cardTitle'>{{item.title}}</view>
-    <view class='cardInfo'>{{item.info}}</view>
+    <view class='cardInfo'>{{item.pubDate}}</view>
   </view>
 </view>

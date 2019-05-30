@@ -1,30 +1,21 @@
-// pages/jwTools/jwTools.js
+// pages/about/about.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    btnList: [
+    currentType: '',
+    currentIndex: 0,
+    dataList: [
       {
-        title: '成绩查询',
-        page: '/pages/jwLogin/jwLogin?type=0&action=0&nextUrl=' + encodeURI('/pages/score/score')
-      },
-      {
-        title: '4、6级查询',
-        page: '/'
-      },
-      {
-        title: '专业要求查询',
-        page: '/'
-      },
-      {
-        title: '大物实验查询',
-        page: '/'
-      },
-      {
-        title: '课程表查询',
-        page: '/'
+        type: 'about',
+        title: '关于我们',
+        content: '开发人员：\n工作环境：\n加入我们：\n'
+      }, {
+        type: 'about',
+        title: '实现原理',
+        content: '数据库：\n中间件：\n协议：\n'
       }
     ]
   },
@@ -33,7 +24,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    let type = options.type;
+    this.data.dataList.map((val, index) => {
+      if(val.type == type){
+        that.setData({
+          currentIndex: index
+        })
+      }
+    })
+    this.setData({
+      currentType: type
+    })
+    wx.setNavigationBarTitle({
+      title: that.data.dataList[that.data.currentIndex].title
+    })
   },
 
   /**

@@ -1,0 +1,16 @@
+<!--pages/pageList/pageList.wxml-->
+<view class='navBox'>
+  <view bindtap='changeType' data-type="{{item.type}}" class='' wx:for="{{btnList}}" class='{{item.type == currentType ? "active" : ""}} "navBtn"' wx:key="index">
+    <view>{{item.title}}</view>
+  </view>
+</view>
+
+<view class='pageListBox'>
+    <view class='cardItem' wx:for="{{pageList}}" wx:key="index">
+    <image class='cardImg' src="{{item.imgList[1].length > 1 ? item.imgList[1] : '/res/imgs/102394.jpg'}}"></image>
+    <view class='cardTitle'>{{item.title}}</view>
+    <view class='cardInfo'>{{item.pubDate}}</view>
+  </view>
+</view>
+
+

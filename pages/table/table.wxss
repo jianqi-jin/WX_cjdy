@@ -83,7 +83,7 @@
   font-weight: lighter;
 }
 .tableHeaderItem:first-child{
-  width: 50rpx;
+  width: 14rpx;
   font-size: 22rpx;
 }
 

@@ -87,6 +87,35 @@ const user = {
   }
 }
 
+const pageJW = {
+  getCard: (type) => {
+    let url
+    if(!type){
+      url = app.globalData.serverUri + 'index/card'
+    }else{
+      url = app.globalData.serverUri + 'index/card?type='+type
+    }
+    return new Promise(resolve => {
+      wx.request({
+        url,
+        method: 'GET',
+        dataType: 'json',
+        responseType: 'text',
+        success: function (res) {
+          res.data = res.data.map((val, index) => {
+            val.cardData = val.cardData.map((val2, index2) => {
+              val2.imgList = val2.imgList.split(',');
+              return val2
+            })
+            return val
+          })
+          resolve(res)
+        }
+      })
+    })
+  }
+}
+
 function getNowWeekBeginStamp() {
   let nowDate = new Date();
   let Year = nowDate.getYear() + 1900;
@@ -171,5 +200,6 @@ module.exports = {
   getClassTableList: user.getClassTableList,
   verLogin: user.verLogin,
   getStuInfo: user.getStuInfo,
-  getStartTime
+  getStartTime,
+  getCard: pageJW.getCard
 }

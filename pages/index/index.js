@@ -4,6 +4,28 @@ const app = getApp()
 //const util = require('../../utils/color.js')
 Page({
   data:{
+    btnList: [{
+      name: 'A+',
+      title: '成绩查询',
+      page: '/pages/jwLogin/jwLogin?type=0&action=0&nextUrl=' + encodeURI('/pages/score/score')
+    }, {
+        name: '表',
+        title: '课程表',
+        page: '/pages/table/table'
+      }, {
+        name: 'new',
+        title: '校园新闻',
+        page: '/pages/pageList/pageList?type=new'
+      }, {
+        name: '告',
+        title: '通知公告',
+        page: '/pages/pageList/pageList?type=notice'
+      }, {
+        name: '考',
+        title: '考试安排',
+        page: '/pages/pageList/pageList?type=exam'
+      }
+    ],
     banner:[
       /**
        * {
@@ -76,6 +98,13 @@ Page({
         url: app.globalData.serverUri + 'index/card',
         success: function (res) {
           console.log(res);
+          res.data = res.data.map((val, index) => {
+            val.cardData = val.cardData.map((val2, index2) => {
+              val2.imgList = val2.imgList.split(',');
+              return val2
+            })
+            return val
+          })
           that.setData({
             card: res.data
           })

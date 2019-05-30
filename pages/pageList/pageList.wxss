@@ -1,0 +1,38 @@
+/* pages/pageList/pageList.wxss */
+.navBox .navBtn{
+  display: inline-block;
+  margin-left: 20px;
+  padding: 8px;
+  color: var(--g-titleColor);
+  font-size: 32rpx;
+}
+
+.navBox .active{
+  border-bottom: 2px solid rgb(75, 189, 255);
+  color: rgb(75, 189, 255);
+}
+.cardItem{
+  padding: 0px 0px 10px 0px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 2px 1px 5px #ccc;
+  background: #fff;
+  margin: 10px 10px 20px 10px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+
+.cardImg{
+  width: 100%;
+
+}
+
+.cardTitle{
+  margin: 2px 10px 2px 10px;
+  font-size: 14px;
+}
+.cardInfo{
+  margin: 2px 5px 2px 5px;
+  font-size: 12px;
+  color: #808080;
+}

@@ -23,10 +23,6 @@ Page({
       {
         title: '关于我们',
         page: '/pages/bind/bind'
-      },
-      {
-        title: 'cookie设置',
-        page: '/pages/bind/bind'
       }
     ]
   },
