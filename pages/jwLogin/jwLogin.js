@@ -91,7 +91,12 @@ Page({
     
     var obj = e.detail.value;
     app.globalData.jwInfo.user = obj.user;
+    wx.showLoading({
+      title: '登录教务系统...',
+      mask: true,
+    })
     JWFun.loginJW(obj, this.data.bindType).then(res => {
+      wx.hideLoading()
       if(res.err){
         that.showError(res.msg)
       }else{

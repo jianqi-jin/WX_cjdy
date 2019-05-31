@@ -1,35 +1,36 @@
-// pages/jwTools/jwTools.js
+// pages/content/content.js
+const util = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    btnList: [
-      {
-        title: '成绩查询',
-        page: '/pages/jwLogin/jwLogin?type=0&action=0&nextUrl=' + encodeURI('/pages/score/score')
-      },
-      {
-        title: '4、6级查询',
-        page: '/'
-      },
-      {
-        title: '专业要求查询',
-        page: '/'
-      },
-      {
-        title: '大物实验查询',
-        page: '/'
-      }
-    ]
+    id: '',
+    contentJSON: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let id = options.id;
+    this.setData({
+      id
+    })
+    util.getContent(id).then(res => {
+      
+      res.content = res.content.replace(/\n/g, "")
+      res.content = res.content.replace(/\\/g, " ")
+      let contentJSON = JSON.parse(res.content)
+      this.setData({
+        contentJSON
+      })
+    })
 
+  },
+  loadContent(){
+    let that = this;
   },
 
   /**

@@ -18,11 +18,11 @@ Page({
       },
       {
         title: '实现原理',
-        page: '/pages/bind/bind'
+        page: '/pages/about/about?type=setUp'
       },
       {
         title: '关于我们',
-        page: '/pages/bind/bind'
+        page: '/pages/about/about?type=about'
       }
     ]
   },

@@ -1,0 +1,25 @@
+/* pages/content/content.wxss */
+.title{
+  font-size: 46rpx;
+  margin: 10px;
+  color: var(--g-titleColor)
+}
+.info{
+  font-size: 26rpx;
+  margin: 20px 10px 20px 10px;
+  color: var(--g-infoColor)
+}
+.contentBox{
+  margin: 10px;
+  font-size: 32rpx;
+  color: var(--g-textColor)
+}
+.contentBox .p{
+  margin: 10px 0px 20px 0px
+}
+.line{
+  border-bottom: 2px solid rgb(255, 83, 83);
+}
+.img{
+  width: 100%;
+}

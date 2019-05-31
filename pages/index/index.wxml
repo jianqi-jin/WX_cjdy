@@ -32,9 +32,11 @@
 <view class='cardBox' wx:for="{{card}}" wx:key="index">
   <view class='classTitle'>{{item.classTitle}}</view>
   <navigator url="{{'/pages/pageList/pageList?type='+item.type}}" class='classMore'>更多</navigator>
-  <view class='cardItem' wx:for="{{item.cardData}}" wx:key="index">
-    <image class='cardImg' src="{{item.imgList[1].length > 1 ? item.imgList[1] : '/res/imgs/102394.jpg'}}"></image>
+  <navigator url="{{'/pages/content/content?id='+item.id}}" class='cardItem' wx:for="{{item.cardData}}" wx:key="index">
+    <image  class='cardImg' src="{{item.imgList[1].length > 1 ? item.imgList[1] : '/res/imgs/102394.jpg'}}"></image>
+    <view class='imgNoneBox' wx:if="{{item.imgList[1].length > 1 ? false : true}}"></view>
+    <view class='imgNoneTitle' wx:if="{{item.imgList[1].length > 1 ? false : true}}">暂无图片</view>
     <view class='cardTitle'>{{item.title}}</view>
     <view class='cardInfo'>{{item.pubDate}}</view>
-  </view>
+  </navigator>
 </view>

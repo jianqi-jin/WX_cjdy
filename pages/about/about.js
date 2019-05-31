@@ -11,11 +11,11 @@ Page({
       {
         type: 'about',
         title: '关于我们',
-        content: '开发人员：\n工作环境：\n加入我们：\n'
+        content: '开发人员：俺不是熊二\n\nbug反馈：+QQ2359634711\n\n加入我们：17724806779\n'
       }, {
-        type: 'about',
+        type: 'setUp',
         title: '实现原理',
-        content: '数据库：\n中间件：\n协议：\n'
+        content: '数据库：mysql\n\n中间件：node+express+request\n\n协议：http/https\n'
       }
     ]
   },

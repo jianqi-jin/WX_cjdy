@@ -11,6 +11,7 @@
     "pages/jwTools/jwTools",
     "pages/score/score",
     "pages/pageList/pageList",
+    "pages/content/content",
     "pages/about/about"
   ],
   "window": {

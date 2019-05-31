@@ -1,0 +1,18 @@
+<!--pages/content/content.wxml-->
+<view class='headBox'>
+<view class='title'>
+{{contentJSON.title}}
+</view>
+  <view class='info'>{{contentJSON.info}}
+  </view>
+  <view class='line'></view>
+</view>
+
+<view class='contentBox'>
+<view class='p' wx:for="{{contentJSON.pList}}" wx:key="index">
+{{item.type == 'txt' ? item.data : ''}}
+<image class='img' wx:if="{{item.type == 'img'}}" src='{{item.data}}'></image>
+</view>
+
+
+</view>

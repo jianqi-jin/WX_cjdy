@@ -18,12 +18,12 @@
       <view class='studentId'>学号：{{stuData.user}}</view>
     </view>
   </view>
-  <navigator  wx:for='{{4}}' wx:key='index' hover-class='navigator-hover'
-    url='{{btnList[index].page}}'
+  <navigator  wx:for='{{btnList}}' wx:key='index' hover-class='navigator-hover'
+    url='{{item.page}}'
   >
     <view class='listBox'>
       <view class='icon'></view>
-      <view class='title'>{{btnList[index].title}}</view>
+      <view class='title'>{{item.title}}</view>
       <view class='arr'><image  src='./res/imgs/arr.png'></image></view>
       
     </view>

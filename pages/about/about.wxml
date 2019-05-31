@@ -1,2 +1,4 @@
 <!--pages/about/about.wxml-->
+<view class='contentBox'>
 <text>{{dataList[currentIndex].content}}</text>
+</view>

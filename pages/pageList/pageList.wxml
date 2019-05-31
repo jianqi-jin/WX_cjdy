@@ -6,11 +6,13 @@
 </view>
 
 <view class='pageListBox'>
-    <view class='cardItem' wx:for="{{pageList}}" wx:key="index">
+  <navigator url="{{'/pages/content/content?id='+item.id}}" class='cardItem' wx:for="{{pageList}}" wx:key="index">
     <image class='cardImg' src="{{item.imgList[1].length > 1 ? item.imgList[1] : '/res/imgs/102394.jpg'}}"></image>
+    <view class='imgNoneBox' wx:if="{{item.imgList[1].length > 1 ? false : true}}"></view>
+    <view class='imgNoneTitle' wx:if="{{item.imgList[1].length > 1 ? false : true}}">暂无图片</view>
     <view class='cardTitle'>{{item.title}}</view>
     <view class='cardInfo'>{{item.pubDate}}</view>
-  </view>
+  </navigator>
 </view>
 
 

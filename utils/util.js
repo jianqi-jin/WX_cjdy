@@ -113,6 +113,21 @@ const pageJW = {
         }
       })
     })
+  },
+  getContent:(id) => {
+    let that = this;
+    return new Promise(resolve => {
+      wx.request({
+        url: app.globalData.serverUri + 'getContent?id=' + id,
+        method: 'GET',
+        dataType: 'json',
+        responseType: 'text',
+        success: function (res) {
+          resolve(res.data)
+        }
+      })
+    })
+    
   }
 }
 
@@ -201,5 +216,6 @@ module.exports = {
   verLogin: user.verLogin,
   getStuInfo: user.getStuInfo,
   getStartTime,
-  getCard: pageJW.getCard
+  getCard: pageJW.getCard,
+  getContent: pageJW.getContent
 }
