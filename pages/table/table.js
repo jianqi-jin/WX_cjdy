@@ -95,6 +95,10 @@ Page({
 
     util.getStartTime().then(res => {
       console.log(res)
+      let currentDay = res.currentDay;
+      if (currentDay == 0) {
+        currentDay = 7;
+      }
       that.setData({
         currentWeek: res.nowWeekNum,
         currentDay: res.nowDay
