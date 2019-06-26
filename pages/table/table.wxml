@@ -2,10 +2,10 @@
 <wxs module="utils" src="../../utils/utils.wxs"></wxs>
 <view class='header'>
   <view class='headerBox'>
-    <view class='headerInfo'>
+    <view class='headerInfo'><!--
     <picker bindchange='changeMajor' class='headerMajorBtn' value="{{currentMajor}}" range="{{majors}}">
       <view>{{majors[currentMajor]}}</view>
-    </picker>
+    </picker>-->
     </view>
     <view class='tableInfo'>
       <picker bindchange='weekChange' class='headerWeekBtn' value="{{currentWeek - 1}}" range='{{weeks}}'>

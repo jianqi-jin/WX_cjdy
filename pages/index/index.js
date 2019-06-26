@@ -7,23 +7,28 @@ Page({
     btnList: [{
       name: 'A+',
       title: '成绩查询',
-      page: '/pages/jwLogin/jwLogin?type=0&action=0&nextUrl=' + encodeURI('/pages/score/score')
+      page: '/pages/jwLogin/jwLogin?type=0&action=0&nextUrl=' + encodeURI('/pages/score/score'),
+      openType: 'navigate'
     }, {
         name: '表',
         title: '课程表',
-        page: '/pages/table/table'
+        page: '/pages/table/table',
+        openType: 'switchTab'
       }, {
         name: 'new',
         title: '校园新闻',
-        page: '/pages/pageList/pageList?type=new'
+        page: '/pages/pageList/pageList?type=new',
+        openType: 'navigate'
       }, {
         name: '告',
         title: '通知公告',
-        page: '/pages/pageList/pageList?type=notice'
+        page: '/pages/pageList/pageList?type=notice',
+        openType: 'navigate'
       }, {
         name: '考',
         title: '考试安排',
-        page: '/pages/pageList/pageList?type=exam'
+        page: '/pages/pageList/pageList?type=exam',
+        openType: 'navigate'
       }
     ],
     banner:[

@@ -25,7 +25,12 @@
       <view class='icon'></view>
       <view class='title'>{{item.title}}</view>
       <view class='arr'><image  src='./res/imgs/arr.png'></image></view>
-      
     </view>
   </navigator>
+<!--
+  <view bindtap='shareTo' class='listBox'>
+    <view class='icon'></view>
+    <view class='title'>推荐给朋友</view>
+    <view class='arr'><image  src='./res/imgs/arr.png'></image></view>
+  </view>-->
 </view>

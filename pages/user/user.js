@@ -123,6 +123,12 @@ Page({
       })
     }
   },
+  shareTo(){
+    console.log('asd')
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
   getStuInfo(){
     util.getStuInfo().then(res => {
       console.log(res)

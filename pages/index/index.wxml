@@ -19,7 +19,7 @@
 
 
 <scroll-view scroll-x class='navBox'>
-<navigator url='{{item.page}}' class='navItem' wx:for="{{btnList}}" wx:key="index">
+<navigator url='{{item.page}}' class='navItem' wx:for="{{btnList}}" wx:key="index" open-type='{{item.openType}}'>
   <view class='navBtn' style='background:{{color.getColor(index)}}'>
     <view>{{item.name}}</view>
   </view>
