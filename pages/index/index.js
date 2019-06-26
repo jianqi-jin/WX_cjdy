@@ -98,18 +98,21 @@ Page({
         url: app.globalData.serverUri + 'index/card',
         success: function (res) {
           console.log(res);
-          res.data = res.data.map((val, index) => {
-            val.cardData = val.cardData.map((val2, index2) => {
-              val2.imgList = val2.imgList.split(',');
-              return val2
+          try{
+            res.data = res.data.map((val, index) => {
+              val.cardData = val.cardData.map((val2, index2) => {
+                val2.imgList = val2.imgList.split(',');
+                return val2
+              })
+              return val
             })
-            return val
-          })
-          that.setData({
-            card: res.data
-          })
+            that.setData({
+              card: res.data
+            })
+          }catch(e){
+            console.log(e)
+          }
           response();
-          
         }
       })
     })

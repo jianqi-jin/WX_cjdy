@@ -37,7 +37,7 @@ Page({
       '第十七周',
       '第十八周'
     ],
-    currentDay: 3,//  1-7
+    currentDay: 1,//  1-7
     days: [
       '周一',
       '周二',
