@@ -2,4 +2,4 @@
 =============================
 微信端教务管理程序
 
-![](https://img.shields.io/appveyor/ci/2359634711/WX_cjdy.svg)
+![](https://img.shields.io/static/v1.svg?label=<LABEL>&message=<MESSAGE>&color=<COLOR>)
