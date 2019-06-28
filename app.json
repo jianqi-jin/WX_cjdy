@@ -34,20 +34,20 @@
       },
       {
         "pagePath": "pages/table/table",
-        "iconPath": "res/icon/table.png",
-        "selectedIconPath": "res/icon/table_active.png",
+        "iconPath": "res/icon/icon_ali/kebiao.png",
+        "selectedIconPath": "res/icon/icon_ali/kebiao_active.png",
         "text": "课表"
       },
       {
         "pagePath": "pages/jwTools/jwTools",
-        "iconPath": "res/icon/search.png",
-        "selectedIconPath": "res/icon/search_active.png",
+        "iconPath": "res/icon/icon_ali/chaxun.png",
+        "selectedIconPath": "res/icon/icon_ali/chaxun_active.png",
         "text": "教务"
       },
       {
         "pagePath": "pages/user/user",
-        "iconPath": "res/icon/user.png",
-        "selectedIconPath": "res/icon/user_active.png",
+        "iconPath": "res/icon/icon_ali/wode5.png",
+        "selectedIconPath": "res/icon/icon_ali/wode5_active.png",
         "text": "我的"
       }
     ]

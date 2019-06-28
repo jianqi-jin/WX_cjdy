@@ -9,13 +9,13 @@ const userInfo = {
               error: '1',
               info: '未获取授权'
             });
-             
+
           } else {
             wx.getUserInfo({
               success(res) {
                 try {
                   resolve(res);
-                }catch(e){
+                } catch (e) {
                   resolve({
                     err: 1,
                     msg: '解析错误'
@@ -27,7 +27,7 @@ const userInfo = {
         }
       })
     })
-    
+
   }
 }
 
@@ -53,7 +53,7 @@ const user = {
         }
       })
     })
-    
+
   },
   verLogin: () => {
     return new Promise(resolve => {
@@ -63,8 +63,8 @@ const user = {
             resolve(res)
           })
         }
-    })
-    
+      })
+
     });
   },
   getStuInfo: () => {
@@ -83,17 +83,17 @@ const user = {
         })
       });
     })
-    
+
   }
 }
 
 const pageJW = {
   getCard: (type) => {
     let url
-    if(!type){
+    if (!type) {
       url = app.globalData.serverUri + 'index/card'
-    }else{
-      url = app.globalData.serverUri + 'index/card?type='+type
+    } else {
+      url = app.globalData.serverUri + 'index/card?type=' + type
     }
     return new Promise(resolve => {
       wx.request({
@@ -101,7 +101,7 @@ const pageJW = {
         method: 'GET',
         dataType: 'json',
         responseType: 'text',
-        success: function (res) {
+        success: function(res) {
           res.data = res.data.map((val, index) => {
             val.cardData = val.cardData.map((val2, index2) => {
               val2.imgList = val2.imgList.split(',');
@@ -114,7 +114,7 @@ const pageJW = {
       })
     })
   },
-  getContent:(id) => {
+  getContent: (id) => {
     let that = this;
     return new Promise(resolve => {
       wx.request({
@@ -122,12 +122,12 @@ const pageJW = {
         method: 'GET',
         dataType: 'json',
         responseType: 'text',
-        success: function (res) {
+        success: function(res) {
           resolve(res.data)
         }
       })
     })
-    
+
   }
 }
 
@@ -143,10 +143,11 @@ function getNowWeekBeginStamp() {
   stamp = stamp - (weekDay - 1) * 24 * 60 * 60 * 1000;
   return stamp;
 }
+
 function getStartTime() {
   return new Promise(resolve => {
     wx.request({
-      url: app.globalData.serverUri +'getStartTime',
+      url: app.globalData.serverUri + 'getStartTime',
       data: '',
       header: {},
       method: 'GET',
@@ -158,10 +159,10 @@ function getStartTime() {
           let timeStamp = res.data.res.startTime;
           let startDate = new Date(parseInt(timeStamp)).toLocaleString();
           let stamp = getNowWeekBeginStamp();
-          let nowDay = (new Date()).getDay() ;//星期几
+          let nowDay = (new Date()).getDay(); //星期几
           let nowWeekNum = (stamp - timeStamp) / (24 * 60 * 60 * 1000 * 7) + 1
           resolve({
-            err: 0, 
+            err: 0,
             startDate,
             nowWeekNum,
             timeStamp,
@@ -177,13 +178,13 @@ function getStartTime() {
         }
       }
     })
-    
-    
+
+
   })
-  
+
 }
 
-function _userLoginByCode(code){
+function _userLoginByCode(code) {
   return new Promise(resolve => {
     wx.showLoading({
       title: '正在请求信息',
@@ -196,9 +197,9 @@ function _userLoginByCode(code){
       },
       success(res) {
         let cookie = '';
-        if (!res.cookies[0].name){
+        if (!res.cookies[0].name) {
           cookie = res.cookies[0]
-        }else{
+        } else {
           cookie = res.cookies[0].name + "=" + res.cookies[0].value
         }
         wx.setStorageSync('sid', cookie);

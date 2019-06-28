@@ -40,6 +40,9 @@ Page({
       });
     }
   },
+  onShow(){
+    this.getStuInfo();
+  },
   onPullDownRefresh(){
     this.onLoad()
   },

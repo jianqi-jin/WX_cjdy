@@ -24,7 +24,7 @@
     </view>
   </view>
   <view class='tableHeader'>
-    <view class='tableHeaderItem {{index == currentDay  ? "nowDay" : ""}}' wx:for="{{8}}" wx:key='index'>{{index == 0 ? '3月' : days[index - 1]}}</view>
+    <view class='tableHeaderItem {{index == currentDay  ? "nowDay" : ""}}' wx:for="{{8}}" wx:key='index'>{{index == 0 ? currentMonth + '月' : days[index - 1]}}</view>
   </view>
 </view>
 

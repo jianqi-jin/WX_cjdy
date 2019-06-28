@@ -11,11 +11,11 @@ Page({
       '2019-2020第一学年',
       '2019-2020第二学年'
     ],
-    currentYear: 0,
+    currentYear: 0,/*
     majors:[
       '海洋油气专业',
       "应用物理学与数学概率论设计统计船业规划图纸制造专业"
-    ],
+    ],*/
     currentMajor: 0,
     weeks: [
       '第一周',
@@ -82,7 +82,8 @@ Page({
     ],
     classTableList: [
       {}, {}, {}, {}, {}, {}, {},
-    ]
+    ],
+    currentMonth: 0
   },
   onShow(){
     let that = this;
@@ -104,7 +105,11 @@ Page({
         currentDay
       })
     })
-    
+    let month = new Date().getMonth();
+    month += 1;
+    this.setData({
+      currentMonth: month
+    })
   },
   toggleSetBox(){
     let that = this;
