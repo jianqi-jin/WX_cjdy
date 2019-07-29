@@ -7,7 +7,7 @@
   text-align: center;
   line-height: 50px;
 }
-view{
+.infoText{
   margin-top: 50px;
 }
 

@@ -1,0 +1,12 @@
+<!--components/navBottom/index.wxml-->
+
+<view class='navBottom'>
+  <view class='navBox'>
+    <view class='navBtn' wx:for="{{navBtnList}}" wx:key="index">
+      <view class='navBtnBox' data-index='{{index}}' bindtap='navTo'>
+        <image class="{{(item.havT ? 'navImg ' : 'navImgNoTitle ') + (!item.havT && selectedIndex == index ? 'backshadow' : '')}}" src="{{selectedIndex == index ? item.selectedImg : item.img}}"></image>
+        <view wx:if="{{item.havT}}" class='navTitle'>{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+</view>

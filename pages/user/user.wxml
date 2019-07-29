@@ -34,3 +34,5 @@
     <view class='arr'><image  src='./res/imgs/arr.png'></image></view>
   </view>-->
 </view>
+
+<nav-bottom  selectedIndex='3'/>

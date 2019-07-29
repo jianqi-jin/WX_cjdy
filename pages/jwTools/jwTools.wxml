@@ -4,3 +4,4 @@
 </view>
 
 <view class='infoText'>欢迎使用教务查询小工具，如果有更好的建议或意见欢迎提出哟~</view>
+<nav-bottom selectedIndex='2'/>

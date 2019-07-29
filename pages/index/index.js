@@ -13,7 +13,7 @@ Page({
         name: '表',
         title: '课程表',
         page: '/pages/table/table',
-        openType: 'switchTab'
+        openType: 'redirect'
       }, {
         name: 'new',
         title: '校园新闻',

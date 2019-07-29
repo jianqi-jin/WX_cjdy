@@ -12,13 +12,13 @@
 page{
   background: #fbf9fe;
   height: 100%;
-  --g-firstColor: #008aa8;
+  --g-firstColor: #ffc011;
   --g-titleColor: #363636;
   --g-textColor: #606060;
   --g-infoColor: #808080;
   --g-backgroundColorL: #fbf9fe;
   --g-backgroundColorH: #efefee;
-  --g-lighterColor: #0dbce5;
+  --g-lighterColor: #ffc011;
   --g-green: #00df0c;
   --g-red: #df0000;
 }

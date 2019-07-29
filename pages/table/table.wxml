@@ -47,3 +47,6 @@
     
   </view>
 </view>
+
+
+<nav-bottom selectedIndex='1' />

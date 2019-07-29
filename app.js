@@ -53,6 +53,36 @@ App({
         '-1': '登录失效'
       },
       cookieStr: ''
-    }
+    },
+    navBottom: [
+      {
+        url: '/pages/index/index',
+        img: '/res/icon/nav-icon-home.png',
+        selectedImg: '/res/icon/nav-icon-home-pre.png',
+        title: '首页',
+        havT: true
+      }, 
+      {
+        url: '/pages/table/table',
+        img: '/res/icon/table_new.png',
+        selectedImg: '/res/icon/table_new_active.png',
+        title: '课表',
+        havT: true
+      },{
+
+        url: '/pages/jwTools/jwTools',
+        img: '/res/icon/dongtaiweixuanzhong.png',
+        selectedImg: '/res/icon/dongtaixuanzhong.png',
+        title: '教务查询',
+        havT: true
+      },{
+
+        url: '/pages/user/user',
+        img: '/res/icon/nav-icon-user.png',
+        selectedImg: '/res/icon/nav-icon-user-pre.png',
+        title: '我的',
+        havT: true
+      }
+    ]
   }
 })

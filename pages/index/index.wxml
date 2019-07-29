@@ -1,14 +1,8 @@
 <!--index.wxml-->
-<swiper
-  interval='5000'
-  autoplay='true'
-  duration='1000'
-  indicator-dots='true'
-  circular='true'
->
+<swiper interval='5000' autoplay='true' duration='1000' indicator-dots='true' circular='true'>
 
   <view wx:for="{{banner}}" wx:key="index">
-    <swiper-item> 
+    <swiper-item>
       <image wx:if="{{item.imgUrl}}" src="{{item.imgUrl}}"></image>
     </swiper-item>
   </view>
@@ -19,13 +13,13 @@
 
 
 <scroll-view scroll-x class='navBox'>
-<navigator url='{{item.page}}' class='navItem' wx:for="{{btnList}}" wx:key="index" open-type='{{item.openType}}'>
-  <view class='navBtn' style='background:{{color.getColor(index)}}'>
-    <view>{{item.name}}</view>
-  </view>
-  <view class='navTitle'>{{item.title}}</view>
-</navigator>
-  
+  <navigator url='{{item.page}}' class='navItem' wx:for="{{btnList}}" wx:key="index" open-type='{{item.openType}}'>
+    <view class='navBtn' style='background:{{color.getColor(index)}}'>
+      <view>{{item.name}}</view>
+    </view>
+    <view class='navTitle'>{{item.title}}</view>
+  </navigator>
+
 </scroll-view>
 
 
@@ -33,10 +27,12 @@
   <view class='classTitle'>{{item.classTitle}}</view>
   <navigator url="{{'/pages/pageList/pageList?type='+item.type}}" class='classMore'>更多</navigator>
   <navigator url="{{'/pages/content/content?id='+item.id}}" class='cardItem' wx:for="{{item.cardData}}" wx:key="index">
-    <image  class='cardImg' src="{{item.imgList[1].length > 1 ? item.imgList[1] : '/res/imgs/102394.jpg'}}"></image>
+    <image lazy-load='true' class='cardImg' src="{{item.imgList[1].length > 1 ? item.imgList[1] : '/res/imgs/102394.jpg'}}"></image>
     <view class='imgNoneBox' wx:if="{{item.imgList[1].length > 1 ? false : true}}"></view>
     <view class='imgNoneTitle' wx:if="{{item.imgList[1].length > 1 ? false : true}}">暂无图片</view>
     <view class='cardTitle'>{{item.title}}</view>
     <view class='cardInfo'>{{item.pubDate}}</view>
   </navigator>
 </view>
+
+<nav-bottom selectedIndex='0' />

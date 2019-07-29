@@ -31,11 +31,7 @@ Page({
     if (!app.globalData.userInfo){
       return;
     }else{
-      wx.showLoading({
-        title: '正在登录',
-      })
       this._tryToGetUserInfo().then(res=>{
-        wx.hideLoading();
         that.getStuInfo();
       });
     }
@@ -61,9 +57,6 @@ Page({
               userInfoFlag: false
             })
           } else {
-            wx.showToast({
-              title: '授权成功',
-            })
             wx.getUserInfo({
               success(res) {
                 that.setData({
@@ -87,9 +80,6 @@ Page({
   },
   _userLoginByCode(code) {
     return new Promise(resolve => {
-      wx.showLoading({
-        title: '正在请求信息',
-      })
       //server userLoginByCode
       wx.request({
         url: app.globalData.serverUri + 'login',
@@ -98,7 +88,6 @@ Page({
         },
         success(res) {
           wx.setStorageSync('sid', res.header['set-cookie']);
-          wx.hideLoading();
           console.log(res)
           resolve(res)
         }
@@ -109,13 +98,7 @@ Page({
   var that = this;
     var userInfo = e.detail.userInfo;
     if (userInfo){
-      wx.showLoading({
-        title: '正在绑定',
-      })
       that._tryToGetUserInfo().then(res => {
-        wx.showLoading({
-          title: '正在登录',
-        })
         that.getStuInfo();
       });
     }else{
@@ -135,9 +118,9 @@ Page({
   getStuInfo(){
     util.getStuInfo().then(res => {
       console.log(res)
-      wx.showToast({
-        title: res.msg,
-      })
+      // wx.showToast({
+      //   title: res.msg,
+      // })
       this.setData({
         stuData: res.stuData
       })

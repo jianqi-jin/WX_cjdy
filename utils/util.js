@@ -186,9 +186,6 @@ function getStartTime() {
 
 function _userLoginByCode(code) {
   return new Promise(resolve => {
-    wx.showLoading({
-      title: '正在请求信息',
-    })
     //server userLoginByCode
     wx.request({
       url: app.globalData.serverUri + 'login',
@@ -203,7 +200,6 @@ function _userLoginByCode(code) {
           cookie = res.cookies[0].name + "=" + res.cookies[0].value
         }
         wx.setStorageSync('sid', cookie);
-        wx.hideLoading();
         console.log(res)
         resolve(res)
       }

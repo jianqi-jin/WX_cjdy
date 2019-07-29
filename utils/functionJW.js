@@ -3,9 +3,6 @@ const user = {
   loadVcode: () => {
     var that = this;
     return new Promise(resolve => {
-      wx.showLoading({
-        title: 'vCode...',
-      })
       wx.request({
         header: {
           cookie: wx.getStorageSync('jsessionid')
@@ -21,7 +18,6 @@ const user = {
           /*that.setData({
             vCodeBase64
           })*/
-          wx.hideLoading();
         }
       })  
     })
